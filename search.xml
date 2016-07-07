@@ -24,9 +24,10 @@
 <li>RadarChart (spider web chart)<br><img src="https://camo.githubusercontent.com/782ded242133f98db56004fc94401570b8749620/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f726164617263686172742e706e67" alt=""></li>
 </ol>
 <p>以上图片来自MPAndroidChart的GitHub主页</p>
-<h2 id="MPAndroidChart基本用法"><a href="#MPAndroidChart基本用法" class="headerlink" title="MPAndroidChart基本用法"></a>MPAndroidChart基本用法</h2><h3 id="1-把MPAndroidChart添加到你的AndroidStudio项目里面："><a href="#1-把MPAndroidChart添加到你的AndroidStudio项目里面：" class="headerlink" title="1. 把MPAndroidChart添加到你的AndroidStudio项目里面："></a>1. 把MPAndroidChart添加到你的AndroidStudio项目里面：</h3><p> <code>dependencies {
-compile &#39;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&#39;
-}</code><br>这样就添加了项目依赖，如果你需要定制MPAndroidChart的部分功能，也可以通过git clone <a href="https://github.com/PhilJay/MPAndroidChart.git" target="_blank" rel="external">https://github.com/PhilJay/MPAndroidChart.git</a> 获取工程源码，作为library添加到项目里面，当然如何操作取决于我们每个人的需求。</p>
+<h2 id="MPAndroidChart基本用法"><a href="#MPAndroidChart基本用法" class="headerlink" title="MPAndroidChart基本用法"></a>MPAndroidChart基本用法</h2><h3 id="1-把MPAndroidChart添加到你的AndroidStudio项目里面："><a href="#1-把MPAndroidChart添加到你的AndroidStudio项目里面：" class="headerlink" title="1. 把MPAndroidChart添加到你的AndroidStudio项目里面："></a>1. 把MPAndroidChart添加到你的AndroidStudio项目里面：</h3><pre><code>dependencies {
+    compile &apos;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&apos;
+}
+</code></pre><p>这样就添加了项目依赖，如果你需要定制MPAndroidChart的部分功能，也可以通过git clone <a href="https://github.com/PhilJay/MPAndroidChart.git" target="_blank" rel="external">https://github.com/PhilJay/MPAndroidChart.git</a> 获取工程源码，作为library添加到项目里面，当然如何操作取决于我们每个人的需求。</p>
 <h3 id="2-简单的上手操作"><a href="#2-简单的上手操作" class="headerlink" title="2. 简单的上手操作"></a>2. 简单的上手操作</h3>]]></content>
     </entry>
     
