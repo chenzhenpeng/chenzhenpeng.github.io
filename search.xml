@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[MPAndroidChart笔记]]></title>
+      <url>https://chenzhenpeng.github.io/2016/07/07/MPAndroidChart%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>#因为项目接触到MPAndroidChart<br>  最近一段时间所在的项目组开始了一个新的项目，里面有一个学生作业正确率的折线图模块，老大让我抽空去研究一下。在网上Google了一下，发现大多数检索结果都指向MPAndroid这个开源框架，于是去GitHub的项目主页看了一下，给人的第一感觉就是很惊艳，而我所在项目的需求基本都被涵盖了，于是决定用这款开源表格框架。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[我的第一篇博客竟然不知道取什么名字]]></title>
       <url>https://chenzhenpeng.github.io/2016/07/06/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%AB%9F%E7%84%B6%E4%B8%8D%E7%9F%A5%E9%81%93%E5%8F%96%E4%BB%80%E4%B9%88%E5%90%8D%E5%AD%97/</url>
       <content type="html"><![CDATA[<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=38592976&auto=1&height=66"></iframe></p>
