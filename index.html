@@ -232,7 +232,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="#" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -746,7 +746,7 @@ compile &#39;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&#39;
             var $resultContent = document.getElementById(content_id);
             $input.addEventListener('input', function(){
                 var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';                
+                var str='<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
                 if (this.value.trim().length > 1) {
@@ -801,7 +801,7 @@ compile &#39;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&#39;
                                 var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
                             });
-                            
+
                             str += "<p class=\"search-result\">" + match_content +"...</p>"
                         }
                         str += "</li>";
@@ -817,7 +817,7 @@ compile &#39;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&#39;
     });}
 
     // handle and trigger popup window;
-    $('.popup-trigger').mousedown(function(e) {
+    $('.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched == false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
@@ -836,6 +836,7 @@ compile &#39;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&#39;
       e.stopPropagation();
     });
   </script>
+
 
   
 
