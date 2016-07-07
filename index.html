@@ -359,30 +359,12 @@
 
       
         
-          
-            <h2 id="因为项目接触到MPAndroidChart"><a href="#因为项目接触到MPAndroidChart" class="headerlink" title="因为项目接触到MPAndroidChart"></a>因为项目接触到MPAndroidChart</h2><p>　　最近一段时间所在的项目组开始了一个新的项目，里面有一个学生作业正确率的折线图模块，老大让我抽空去研究一下。在网上Google了一下，发现大多数检索结果都指向MPAndroid这个开源框架，于是去GitHub的项目主页看了一下，给人的第一感觉就是很惊艳，而我所在项目的需求基本都被涵盖了，于是决定用这款开源表格框架。</p>
-<h2 id="MPAndroid简介"><a href="#MPAndroid简介" class="headerlink" title="MPAndroid简介"></a>MPAndroid简介</h2><p>　　GitHub主页地址:<a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="external">https://github.com/PhilJay/MPAndroidChart</a></p>
-<h3 id="能够实现的表格类型主要包含以下几种："><a href="#能够实现的表格类型主要包含以下几种：" class="headerlink" title="能够实现的表格类型主要包含以下几种："></a>能够实现的表格类型主要包含以下几种：</h3><ol>
-<li>LineChart (with legend, simple design)<br><img src="https://camo.githubusercontent.com/a9eaa5fc7fb6c1e70b22acd09385055e0f5c4fe7/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f73696d706c6564657369676e5f6c696e656368617274342e706e67" alt=""></li>
-<li>LineChart (with legend, simple design)<br><img src="https://camo.githubusercontent.com/8c1c9cf68af994a1e17690834603c450638cc62c/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f73696d706c6564657369676e5f6c696e656368617274332e706e67" alt=""></li>
-<li>LineChart (cubic lines)<br><img src="https://camo.githubusercontent.com/4e85ee91169c2ad5dc500b3b415a0c974766615d/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f63756269636c696e6563686172742e706e67" alt=""></li>
-<li>LineChart (gradient fill)<br><img src="https://camo.githubusercontent.com/e9f3408cc22c2896a897e9ed92a2fd2cbcf40493/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f6c696e655f63686172745f6772616469656e742e706e67" alt=""></li>
-<li>Combined-Chart (bar- and linechart in this case)<br><img src="https://camo.githubusercontent.com/e29d8d3316203700965cc6cc56e67b779f2845bb/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f636f6d62696e65645f63686172742e706e67" alt=""></li>
-<li>BarChart (with legend, simple design)<br><img src="https://camo.githubusercontent.com/78b4bc4e50e151970961daf56e81c4c0db72d27c/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f73696d706c6564657369676e5f6261726368617274332e706e67" alt=""></li>
-<li>BarChart (grouped DataSets)<br><img src="https://camo.githubusercontent.com/4bf136c2fd25bcbeac0bcf363bc8f48dae0651fc/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f67726f7570656462617263686172742e706e67" alt=""></li>
-<li>Horizontal-BarChart<br><img src="https://camo.githubusercontent.com/2ec281e0ac3013076bff1c3ac00d8d6de372d7a4/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f686f72697a6f6e74616c5f62617263686172742e706e67" alt=""></li>
-<li>PieChart (with selection, …)<br><img src="https://camo.githubusercontent.com/7e8a4a3c938c21d032d44d999edd781b6e146f2a/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f73696d706c6564657369676e5f7069656368617274312e706e67" alt=""></li>
-<li>ScatterChart (with squares, triangles, circles, … and more)<br><img src="https://camo.githubusercontent.com/6b254aa699df7f9464967009129c3017de721b77/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f7363617474657263686172742e706e67" alt=""></li>
-<li>CandleStickChart (for financial data)<br><img src="https://camo.githubusercontent.com/6dbee4e35fde8691e5ac29417583dc8e16608895/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f63616e646c65737469636b63686172742e706e67" alt=""></li>
-<li>BubbleChart (area covered by bubbles indicates the yValue)<br><img src="https://camo.githubusercontent.com/6704c21e680e831c3c07d0bebf2676f5e99a3d41/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f627562626c6563686172742e706e67" alt=""></li>
-<li>RadarChart (spider web chart)<br><img src="https://camo.githubusercontent.com/782ded242133f98db56004fc94401570b8749620/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f726164617263686172742e706e67" alt=""></li>
-</ol>
-<p>以上图片来自MPAndroidChart的GitHub主页</p>
-<h2 id="MPAndroidChart基本用法"><a href="#MPAndroidChart基本用法" class="headerlink" title="MPAndroidChart基本用法"></a>MPAndroidChart基本用法</h2><h3 id="1-把MPAndroidChart添加到你的AndroidStudio项目里面："><a href="#1-把MPAndroidChart添加到你的AndroidStudio项目里面：" class="headerlink" title="1. 把MPAndroidChart添加到你的AndroidStudio项目里面："></a>1. 把MPAndroidChart添加到你的AndroidStudio项目里面：</h3><p> <code>dependencies {
-compile &#39;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&#39;
-}</code><br>这样就添加了项目依赖，如果你需要定制MPAndroidChart的部分功能，也可以通过git clone <a href="https://github.com/PhilJay/MPAndroidChart.git" target="_blank" rel="external">https://github.com/PhilJay/MPAndroidChart.git</a> 获取工程源码，作为library添加到项目里面，当然如何操作取决于我们每个人的需求。</p>
-<h3 id="2-简单的上手操作"><a href="#2-简单的上手操作" class="headerlink" title="2. 简单的上手操作"></a>2. 简单的上手操作</h3>
-          
+          <h2 id="因为项目接触到MPAndroidChart"><a href="#因为项目接触到MPAndroidChart" class="headerlink" title="因为项目接触到MPAndroidChart"></a>因为项目接触到MPAndroidChart</h2><p>　　最近一段时间所在的项目组开始了一个新的项目，里面有一个学生作业正确率的折线图模块，老大让我抽空去研究一下。在网上Google了一下，发现大多数检索结果都指向MPAndroid这个开源框架，于是去GitHub的项目主页看了一下，给人的第一感觉就是很惊艳，而我所在项目的需求基本都被涵盖了，于是决定用这款开源表格框架。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/07/MPAndroidChart笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -499,11 +481,13 @@ compile &#39;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&#39;
 
       
         
-          
-            <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=38592976&auto=1&height=66"></iframe></p>
-<h2 id="终于我也开始折腾Github-Pages与Hexo的博客"><a href="#终于我也开始折腾Github-Pages与Hexo的博客" class="headerlink" title="终于我也开始折腾Github Pages与Hexo的博客"></a>终于我也开始折腾Github Pages与Hexo的博客</h2><p>　　今天上班的时候，一位友人告诉我他开始折腾博客了，看了他的博客站点感觉挺不错的。其实之前也看过相关的教程，最后由于域名的原因，放弃了，今天一时兴起，于是花了几分钟在阿里云注册了一个域名。于是漫漫折腾之路开始了，大概折腾了将近1个小时，还没成功，其实大部分步骤已经搞定了。最后在另一位友人的指导下，终于在下班之前完成了博客的搭建工作，在此感谢两位友人。</p>
-
-          
+          <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=38592976&auto=1&height=66"></iframe></p>
+<h2 id="终于我也开始折腾Github-Pages与Hexo的博客"><a href="#终于我也开始折腾Github-Pages与Hexo的博客" class="headerlink" title="终于我也开始折腾Github Pages与Hexo的博客"></a>终于我也开始折腾Github Pages与Hexo的博客</h2><p>　　今天上班的时候，一位友人告诉我他开始折腾博客了，看了他的博客站点感觉挺不错的。其实之前也看过相关的教程，最后由于域名的原因，放弃了，今天一时兴起，于是花了几分钟在阿里云注册了一个域名。于是漫漫折腾之路开始了，大概折腾了将近1个小时，还没成功，其实大部分步骤已经搞定了。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/06/我的第一篇博客竟然不知道取什么名字/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
