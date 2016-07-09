@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://camo.githubusercontent.com/6dbee4e35fde8691e5ac29417583dc8e16608895/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f63616e646c65737469636b63686172742e706e67">
 <meta property="og:image" content="https://camo.githubusercontent.com/6704c21e680e831c3c07d0bebf2676f5e99a3d41/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f627562626c6563686172742e706e67">
 <meta property="og:image" content="https://camo.githubusercontent.com/782ded242133f98db56004fc94401570b8749620/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f726164617263686172742e706e67">
-<meta property="og:updated_time" content="2016-07-07T13:34:47.360Z">
+<meta property="og:updated_time" content="2016-07-09T12:32:44.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MPAndroidChart笔记">
 <meta name="twitter:description" content="因为项目接触到MPAndroidChart　　最近一段时间所在的项目组开始了一个新的项目，里面有一个学生作业正确率的折线图模块，老大让我抽空去研究一下。在网上Google了一下，发现大多数检索结果都指向MPAndroid这个开源框架，于是去GitHub的项目主页看了一下，给人的第一感觉就是很惊艳，而我所在项目的需求基本都被涵盖了，于是决定用这款开源表格框架。">
@@ -391,7 +391,231 @@
     compile &apos;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&apos;
 }
 </code></pre><p>这样就添加了项目依赖，如果你需要定制MPAndroidChart的部分功能，也可以通过git clone <a href="https://github.com/PhilJay/MPAndroidChart.git" target="_blank" rel="external">https://github.com/PhilJay/MPAndroidChart.git</a> 获取工程源码，作为library添加到项目里面，当然如何操作取决于我们每个人的需求。</p>
-<h3 id="2-简单的上手操作"><a href="#2-简单的上手操作" class="headerlink" title="2. 简单的上手操作"></a>2. 简单的上手操作</h3>
+<h3 id="2-简单的上手操作"><a href="#2-简单的上手操作" class="headerlink" title="2. 简单的上手操作"></a>2. 简单的上手操作</h3><p>　　首先新建一个名为linechart.xml的布局文件</p>
+<pre><code>&lt;com.github.mikephil.charting.charts.LineChart
+        android:id=&quot;@+id/line_chart&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;200dp&quot; /&gt;
+</code></pre><p>　　新建一个结构体AccuracyInfo</p>
+<pre><code>public class AccuracyInfo implements Parcelable{
+    public String lessonName;//必选    String    课程名称
+    public float accuracy;//必选    float    当前课时所有作业环节的平均正确率
+
+    public AccuracyInfo( String lessonName, float accuracy) {
+    this.lessonName = lessonName;
+    this.accuracy = accuracy;
+}
+
+
+public String getLessonName() {
+    return lessonName;
+}
+
+public void setLessonName(String lessonName) {
+    this.lessonName = lessonName;
+}
+
+public float getAccuracy() {
+    return accuracy;
+}
+
+public void setAccuracy(float accuracy) {
+    this.accuracy = accuracy;
+}
+
+
+protected AccuracyInfo(Parcel in) {
+
+    lessonName = in.readString();
+    accuracy = in.readFloat();
+}
+
+@Override
+public void writeToParcel(Parcel dest, int flags) {
+    dest.writeString(lessonName);
+    dest.writeFloat(accuracy);
+}
+
+@Override
+public int describeContents() {
+    return 0;
+}
+
+public static final Creator&lt;AccuracyInfo&gt; CREATOR = new Creator&lt;AccuracyInfo&gt;() {
+    @Override
+    public AccuracyInfo createFromParcel(Parcel in) {
+        return new AccuracyInfo(in);
+    }
+
+    @Override
+    public AccuracyInfo[] newArray(int size) {
+        return new AccuracyInfo[size];
+    }
+};
+}
+</code></pre><p>   然后进行具体的代码</p>
+<pre><code>public class PersonalCenterLearningSituationFragment extends BaseFragment implements     OnChartValueSelectedListener,View.OnClickListener{
+
+    private String TAG = PersonalCenterLearningSituationFragment.class.getSimpleName();
+    private PersonalCenterActivity mActivity;
+    private LineChart lineChart;
+    private Typeface typeface;
+    private ArrayAdapter&lt;String&gt; adapter;
+    private List&lt;AccuracyInfo&gt; accuracyInfoList;//此时的数据自行填充
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mActivity = (PersonalCenterActivity)getActivity();
+        mHandler=new MyHandler&lt;&gt;(this);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle     savedInstanceState) {
+        View view = inflater.inflate(R.layout.linechart, null, true);
+        initView(view);
+        return view;
+    }
+
+
+    /**
+     * 初始化View
+     * @param view
+     */
+private void initView(View view){
+    initLineChartView(view);
+    setLineChartData(accuracyInfoList);
+}
+
+    /**
+     * 初始化LineChart表视图
+     * @param view
+     */
+private void initLineChartView(View view){
+    lineChart=(LineChart)view.findViewById(R.id.line_chart);
+    lineChart.setDescription(&quot;xxxxxx&quot;);//表格的描述信息
+    lineChart.setNoDataText(&quot;xxxxxx&quot;);//没有数据表格的描述信息
+    lineChart.setTouchEnabled(true);
+    lineChart.setDragDecelerationFrictionCoef(0.9f);
+    lineChart.setDragEnabled(true);
+    lineChart.setScaleEnabled(true);
+    lineChart.setDrawGridBackground(false);
+    lineChart.setHighlightPerDragEnabled(true);
+    lineChart.setExtraBottomOffset(30f);//偏移量
+    lineChart.setExtraLeftOffset(5f);
+    lineChart.setPinchZoom(true);
+    lineChart.setOnChartValueSelectedListener(this);
+    lineChart.getAxisLeft().setLabelCount(10, false);//设置y轴显示标签的数量
+
+    // add data
+    lineChart.animateX(2500);
+    typeface = Typeface.createFromAsset(getActivity().getAssets(), &quot;OpenSans-Regular.ttf&quot;);
+
+   //折线图的标签设置
+    Legend l = lineChart.getLegend();
+    l.setEnabled(false);//不显示标签
+    l.setForm(Legend.LegendForm.LINE);
+    l.setTypeface(typeface);
+    l.setTextSize(11f);
+    l.setTextColor(Color.BLACK);
+    l.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+
+    //X轴的设置
+    XAxis xAxis = lineChart.getXAxis();
+    xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);//x轴lable的位置
+    xAxis.setTypeface(typeface);
+    xAxis.setEnabled(true);
+    xAxis.setTextColor(ColorTemplate.getHoloBlue());
+    xAxis.setDrawGridLines(false);
+    xAxis.setDrawLabels(true);//默认隐藏x轴的值
+    xAxis.setDrawAxisLine(true);
+    xAxis.setSpaceBetweenLabels(1);
+    xAxis.setAvoidFirstLastClipping(true);//如果设置为true，图表将避免第一个和最后一个标签条目被减掉在图表或屏幕的边缘。
+    xAxis.setSpaceBetweenLabels(1);//设置x轴标签之间的空间字符数，默认是4个。
+    //左侧Y轴设置
+    YAxis leftAxis = lineChart.getAxisLeft();
+    leftAxis.setTypeface(typeface);
+    leftAxis.setEnabled(true);
+    leftAxis.setDrawLabels(true);
+    leftAxis.setTextColor(ColorTemplate.getHoloBlue());
+    leftAxis.setAxisMaxValue(100);
+    leftAxis.setAxisMinValue(0);
+    leftAxis.setDrawGridLines(true);
+    leftAxis.setDrawAxisLine(true);
+    leftAxis.setGranularityEnabled(true);
+    leftAxis.setValueFormatter(new PercentFormatter());//设置百分比显示
+    //右侧Y轴设置
+    YAxis rightAxis = lineChart.getAxisRight();
+    rightAxis.setTypeface(typeface);
+    rightAxis.setEnabled(false);
+    rightAxis.setDrawLabels(false);
+    rightAxis.setTextColor(Color.RED);
+    rightAxis.setAxisMaxValue(100);
+    rightAxis.setAxisMinValue(0);
+    rightAxis.setDrawGridLines(false);
+    rightAxis.setDrawZeroLine(false);
+    rightAxis.setGranularityEnabled(false);
+    rightAxis.setDrawAxisLine(false);
+    }
+
+    /**
+     * 设置LineChart表所有数据
+     */
+private void setLineChartData(List&lt;AccuracyInfo&gt; accuracyInfoList) {
+    Logg.d(TAG,&quot;position--&quot;+position+&quot;accuracyInfoList--&quot;+accuracyInfoList.size());
+    ArrayList&lt;String&gt; xVals = new ArrayList&lt;String&gt;();// X轴数据
+    ArrayList&lt;Entry&gt; yVals = new ArrayList&lt;Entry&gt;();//  Y轴数据
+    if(accuracyInfoList!=null){
+        for (int i = 0; i &lt; accuracyInfoList.size(); i++) {
+            xVals.add(accuracyInfoList.get(i).getLessonName());
+        }
+        for (int i = 0; i &lt; accuracyInfoList.size(); i++) {
+            float val = (accuracyInfoList.get(i).getAccuracy());
+            yVals.add(new Entry(val, i));
+        }
+    }
+        LineDataSet lineDataSet;
+        lineDataSet = new LineDataSet(yVals,&quot;MPAndroid折线图&quot;);//对应折线图的名称
+        lineDataSet.setAxisDependency(YAxis.AxisDependency.RIGHT);
+        lineDataSet.setColor(Color.parseColor(&quot;#999999&quot;));//对应折线图的颜色
+        lineDataSet.setCircleColor(Color.parseColor(&quot;#999999&quot;));//对应折线图节点的圆点颜色
+        lineDataSet.setLineWidth(2f);
+        lineDataSet.setValueFormatter(new PercentFormatter());//设置百分比显示
+        lineDataSet.setCircleRadius(3f);
+        lineDataSet.setFillAlpha(65);
+        lineDataSet.setFillColor(Color.RED);
+        lineDataSet.setDrawCircleHole(false);
+        lineDataSet.setHighLightColor(Color.rgb(244, 117, 117));
+        ArrayList&lt;ILineDataSet&gt; dataSets = new ArrayList&lt;ILineDataSet&gt;();
+        dataSets.add(lineDataSet);
+        LineData data = new LineData(xVals, dataSets);
+        data.setValueTextColor(Color.BLACK);//折线图圆点文本值的颜色
+        data.setValueTextSize(9f);
+        lineChart.setData(data);
+        lineChart.invalidate();//表格重绘
+
+    }
+
+
+@Override
+public void onDestroy() {
+    super.onDestroy();
+    }
+
+
+@Override
+public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
+    //获取对应折线圆点的对应值：e.getVal()) 获取对应x轴的值：e.getXIndex())
+    }
+
+@Override
+public void onNothingSelected() {
+
+    }
+}
+</code></pre>
       
     </div>
 
