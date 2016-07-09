@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[MPAndroidChart笔记]]></title>
       <url>https://chenzhenpeng.github.io/2016/07/07/MPAndroidChart%E7%AC%94%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<h2 id="因为项目接触到MPAndroidChart"><a href="#因为项目接触到MPAndroidChart" class="headerlink" title="因为项目接触到MPAndroidChart"></a>因为项目接触到MPAndroidChart</h2><p>　　最近一段时间所在的项目组开始了一个新的项目，里面有一个学生作业正确率的折线图模块，老大让我抽空去研究一下。在网上Google了一下，发现大多数检索结果都指向MPAndroid这个开源框架，于是去GitHub的项目主页看了一下，给人的第一感觉就是很惊艳，而我所在项目的需求基本都被涵盖了，于是决定用这款开源表格框架。<a id="more"></a></p>
+      <content type="html"><![CDATA[<h2 id="因为项目接触到MPAndroidChart"><a href="#因为项目接触到MPAndroidChart" class="headerlink" title="因为项目接触到MPAndroidChart"></a>因为项目接触到MPAndroidChart</h2><p>　　因为最近的项目需求需要用到折线图，通过Google检索，发现了MPAndroidChart这款开源的表格框架，在这款框架使用过程中遇到了许多问题，多亏了一些热心的网友的帮助，在此表示感谢。现在也抽空记录一下自己的一点点关于MPAndroidChart的认识，新手乍到，多多指教<a id="more"></a></p>
 <h2 id="MPAndroid简介"><a href="#MPAndroid简介" class="headerlink" title="MPAndroid简介"></a>MPAndroid简介</h2><p>　　GitHub主页地址:<a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="external">https://github.com/PhilJay/MPAndroidChart</a></p>
 <h3 id="能够实现的表格类型主要包含以下几种："><a href="#能够实现的表格类型主要包含以下几种：" class="headerlink" title="能够实现的表格类型主要包含以下几种："></a>能够实现的表格类型主要包含以下几种：</h3><ol>
 <li>LineChart (with legend, simple design)<br><img src="https://camo.githubusercontent.com/a9eaa5fc7fb6c1e70b22acd09385055e0f5c4fe7/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f73696d706c6564657369676e5f6c696e656368617274342e706e67" alt=""></li>
