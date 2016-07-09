@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://camo.githubusercontent.com/6dbee4e35fde8691e5ac29417583dc8e16608895/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f63616e646c65737469636b63686172742e706e67">
 <meta property="og:image" content="https://camo.githubusercontent.com/6704c21e680e831c3c07d0bebf2676f5e99a3d41/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f627562626c6563686172742e706e67">
 <meta property="og:image" content="https://camo.githubusercontent.com/782ded242133f98db56004fc94401570b8749620/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d50416e64726f696443686172742f6d61737465722f73637265656e73686f74732f726164617263686172742e706e67">
-<meta property="og:updated_time" content="2016-07-09T12:50:21.488Z">
+<meta property="og:updated_time" content="2016-07-09T13:12:43.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MPAndroidChart笔记">
 <meta name="twitter:description" content="因为项目接触到MPAndroidChart　　因为最近的项目需求需要用到折线图，通过Google检索，发现了MPAndroidChart这款开源的表格框架，在这款框架使用过程中遇到了许多问题，多亏了一些热心的网友的帮助，在此表示感谢。现在也抽空记录一下自己的一点点关于MPAndroidChart的认识，新手乍到，多多指教！">
@@ -391,12 +391,12 @@
     compile &apos;com.github.PhilJay:MPAndroidChart:v3.0.0-beta1&apos;
 }
 </code></pre><p>这样就添加了项目依赖，如果你需要定制MPAndroidChart的部分功能，也可以通过git clone <a href="https://github.com/PhilJay/MPAndroidChart.git" target="_blank" rel="external">https://github.com/PhilJay/MPAndroidChart.git</a> 获取工程源码，作为library添加到项目里面，当然如何操作取决于我们每个人的需求。</p>
-<h3 id="2-简单的上手操作"><a href="#2-简单的上手操作" class="headerlink" title="2. 简单的上手操作"></a>2. 简单的上手操作</h3><p>　　首先新建一个名为linechart.xml的布局文件</p>
+<h3 id="2-简单的上手操作"><a href="#2-简单的上手操作" class="headerlink" title="2. 简单的上手操作"></a>2. 简单的上手操作</h3><p>　　1.首先新建一个名为linechart.xml的布局文件</p>
 <pre><code>&lt;com.github.mikephil.charting.charts.LineChart
         android:id=&quot;@+id/line_chart&quot;
         android:layout_width=&quot;match_parent&quot;
         android:layout_height=&quot;200dp&quot; /&gt;
-</code></pre><p>　　新建一个结构体AccuracyInfo</p>
+</code></pre><p>　　2.新建一个结构体AccuracyInfo</p>
 <pre><code>public class AccuracyInfo implements Parcelable{
     public String lessonName;//必选    String    课程名称
     public float accuracy;//必选    float    当前课时所有作业环节的平均正确率
@@ -453,7 +453,7 @@ public static final Creator&lt;AccuracyInfo&gt; CREATOR = new Creator&lt;Accurac
     }
 };
 }
-</code></pre><p>   然后进行具体的代码</p>
+</code></pre><p>　　3.然后进行具体的代码</p>
 <pre><code>public class PersonalCenterLearningSituationFragment extends BaseFragment implements     OnChartValueSelectedListener,View.OnClickListener{
 
     private String TAG = PersonalCenterLearningSituationFragment.class.getSimpleName();
