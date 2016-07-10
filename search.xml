@@ -4,6 +4,21 @@
   
     
     <entry>
+      <title><![CDATA[Adobe六月更新一览，新增许多实用功能]]></title>
+      <url>https://chenzhenpeng.github.io/2016/07/10/Adobe%E5%85%AD%E6%9C%88%E6%9B%B4%E6%96%B0%E4%B8%80%E8%A7%88%EF%BC%8C%E6%96%B0%E5%A2%9E%E8%AE%B8%E5%A4%9A%E5%AE%9E%E7%94%A8%E5%8A%9F%E8%83%BD/</url>
+      <content type="html"><![CDATA[<h3 id="安装Adobe-Creative-Cloud"><a href="#安装Adobe-Creative-Cloud" class="headerlink" title="安装Adobe Creative Cloud"></a>安装Adobe Creative Cloud</h3><ol>
+<li>首先可以根据我们个人需求修改Adobe软件的安装位置，默认是C:\Program Files\Adobe这个目录，我们可以在这个页面进行修改<br><img src="http://i.imgur.com/FRX0CzU.jpg" alt=""></li>
+<li>在Apps的页面我们选择”试用”就可以安装对应的软件了(PS:当然Adobe由于国内发展形势和盗版猖獗已经退出了大陆市场，用以前的方法截取离线安装包已经不怎么好使了)<br><img src="http://i.imgur.com/K2rF5i2.jpg" alt=""></li>
+</ol>
+<h3 id="Adobe-Photoshop-CC最新实用功能一览"><a href="#Adobe-Photoshop-CC最新实用功能一览" class="headerlink" title="Adobe Photoshop CC最新实用功能一览"></a>Adobe Photoshop CC最新实用功能一览</h3><h5 id="华丽丽的启动页"><a href="#华丽丽的启动页" class="headerlink" title="华丽丽的启动页"></a>华丽丽的启动页</h5><p><img src="http://i.imgur.com/gfYyLGi.png" alt=""></p>
+<ol>
+<li>脸部液化<br>　　首先导入一张人物头像的照片(PS:这位美女说了反正你也不认识),选择”液化”选项<br><img src="http://i.imgur.com/MPbCrqE.jpg" alt=""><br>　　进入液化的工作页面我们可以看到和之前的版本的工作页面已经有了很大的改观，最明显的是它对人脸进行了识别，可以对细节进行调整。这里就不做一一演示，有兴趣可以自己找一张人物头像试一下，它支持多个人物头像的识别，比如合影。<br><img src="http://i.imgur.com/b3qwgwY.jpg" alt="">
+　　</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[MPAndroidChart笔记]]></title>
       <url>https://chenzhenpeng.github.io/2016/07/07/MPAndroidChart%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[<h2 id="因为项目接触到MPAndroidChart"><a href="#因为项目接触到MPAndroidChart" class="headerlink" title="因为项目接触到MPAndroidChart"></a>因为项目接触到MPAndroidChart</h2><p>　　因为最近的项目需求需要用到折线图，通过Google检索，发现了MPAndroidChart这款开源的表格框架，在这款框架使用过程中遇到了许多问题，多亏了一些热心的网友的帮助，在此表示感谢。现在也抽空记录一下自己的一点点关于MPAndroidChart的认识，新手乍到，多多指教！<a id="more"></a></p>
